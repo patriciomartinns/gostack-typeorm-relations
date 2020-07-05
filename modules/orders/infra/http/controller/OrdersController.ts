@@ -21,10 +21,7 @@ export default class OrdersController {
 
     const createOrder = container.resolve(CreateOrderService);
 
-    const order = await createOrder.execute({
-      customer_id,
-      products,
-    });
+    const order = await createOrder.execute({ customer_id, products });
 
     return response.json(order);
   }
